@@ -30,7 +30,7 @@ For the DroidCam v4l2loopback, you can change the webcam output resolution as fo
 sudo rmmod v4l2loopback_dc
 
 - Re-load it with new options (WIDTH and HEIGHT are numbers). :  
-insmod /lib/modules/`uname -r`/kernel/drivers/media/video/v4l2loopback-dc.ko width=WIDTH height=HEIGHT
+modprobe v4l2loopback_dc width=WIDTH height=HEIGHT
 
 Standard sizes (Width x Height): 640×480, 960×720, 1280×720 (720p), 1920×1080 (1080p).
 
