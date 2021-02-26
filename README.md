@@ -21,7 +21,7 @@ GitHub: https://github.com/dev47apps/droidcam
 
 Удаление: `/opt/droidcam-uninstall`
 
-**HD Mode – Change webcam resolution  
+**HD Mode – Change webcam resolution**
 
 Note: If you are using the standard v4l2loopback module, close the droidcam window and update the size parameter in ~/.config/droidcam.
 For the DroidCam v4l2loopback, you can change the webcam output resolution as follows:
