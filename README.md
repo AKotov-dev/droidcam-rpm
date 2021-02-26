@@ -17,9 +17,9 @@ GitHub: https://github.com/dev47apps/droidcam
 
 Дополнительная информация
 ---
-Запуск (Ярлык в Меню-Аудио и Видео-DroidCam) или `droidcam` из под юзера
+Запуск: Ярлык в "Меню-Аудио и Видео-DroidCam" или `droidcam` из под юзера
 
-Удаление: /opt/droidcam-uninstall
+Удаление: `/opt/droidcam-uninstall`
 
 **HD Mode – Change webcam resolution
 
@@ -27,16 +27,16 @@ Note: If you are using the standard v4l2loopback module, close the droidcam wind
 For the DroidCam v4l2loopback, you can change the webcam output resolution as follows:
 
 - Close any programs using the droidcam webcam. Unload the device driver:  
-sudo rmmod v4l2loopback_dc
+`rmmod v4l2loopback_dc`
 
 - Re-load it with new options (WIDTH and HEIGHT are numbers). :  
-modprobe v4l2loopback_dc width=WIDTH height=HEIGHT
+`modprobe v4l2loopback_dc width=WIDTH height=HEIGHT`
 
 Standard sizes (Width x Height): 640×480, 960×720, 1280×720 (720p), 1920×1080 (1080p).
 
 - Restart the droidcam client to reload the settings, and test it out. You can keep changing the resolution.
 
-- Edit the text file /etc/modprobe.d/droidcam.conf with the new options to make the change stick.
+- Edit the text file `/etc/modprobe.d/droidcam.conf` with the new options to make the change stick.
 
 It’s also possible to invert the video size (eg. 480×640, width=480 height=640), which will make the webcam vertical and rotate the video 90º. Not all programs may load the webcam with inverted parameters (eg. Discord does not) but many do (eg. Zoom and OBS).
 
