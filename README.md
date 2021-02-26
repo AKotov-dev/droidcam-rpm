@@ -4,8 +4,8 @@ DroidCam - GNU/Linux client for DroidCam
 URL: https://www.dev47apps.com/droidcam/linux/  
 GitHub: https://github.com/dev47apps/droidcam
 
-su/password  
-Разархивируйте DroidCam.tar.gz в /tmp и запустите /tmp/DroidCam/droidcam-install-update.sh
+`su/password`  
+`tar xvzf DroidCam.tar.gz; cd ./DroidCam; ./droidcam-install-update.sh`
 
 - Проверяется наличие подключения к сети Интернет
 - Обновляются текущие зеркала
