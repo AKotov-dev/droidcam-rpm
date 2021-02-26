@@ -24,7 +24,10 @@ fi;
 urpmi.update -a
 
 #Удаление предыдущей установки
-[ -f /opt/droidcam-uninstall ] && /opt/droidcam-uninstall
+if [ -f /opt/droidcam-uninstall ]; then
+  killall adb; killall droidcam;
+  /opt/droidcam-uninstall
+fi;
 
 #Установка (пример для версии droidcam_1.7.1.zip)
 #---
