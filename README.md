@@ -42,7 +42,7 @@ It’s also possible to invert the video size (eg. 480×640, width=480 height=64
 
 Настройка смартфона
 ---
-URL: https://droidcamru.ru/podkluchenie/cherez-usb/
+Источник: https://droidcamru.ru/podkluchenie/cherez-usb/
 
 - Отключите устройство от компьютера.
 
@@ -55,5 +55,4 @@ URL: https://droidcamru.ru/podkluchenie/cherez-usb/
 
 - Теперь ваш компьютер определит телефон как новое USB-устройство и свяжет его с драйверами, установленными на шаге 2. Это должно заставить работать DroidCam.
 
-Источник: https://droidcamru.ru/podkluchenie/cherez-usb/
 
