@@ -1,7 +1,7 @@
 DroidCam (x86_64) install/update script for Mageia Linux 7/8
 ---
-DroidCam - GNU/Linux client for DroidCam
-URL: https://www.dev47apps.com/droidcam/linux/
+DroidCam - GNU/Linux client for DroidCam  
+URL: https://www.dev47apps.com/droidcam/linux/  
 GitHub: https://github.com/dev47apps/droidcam
 
 su/password
