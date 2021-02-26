@@ -21,7 +21,8 @@ fi;
 
 #Удаление предыдущей установки
 if [ -f /opt/droidcam-uninstall ]; then
-  killall adb && killall droidcam;
+  [ $(pidof adb) ] && killall adb
+  [ $(pidof droidcam) ] && killall droidcam
   /opt/droidcam-uninstall
 fi;
 
