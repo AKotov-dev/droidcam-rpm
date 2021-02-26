@@ -10,18 +10,14 @@ clear
 #Версия DroidCam
 version="1.7.1"
 
-#Имена текущих пакетов kernel-devel и kernel-source
-devel="kernel-source-$(uname -r | sed 's/-desktop//')"
-source="kernel-desktop-devel-$(uname -r | sed 's/-desktop//')"
-
 #Проверка наличия интернет и обновление зеркал
 ping -c 1 -q google.com >&/dev/null
 if [ "$?" -ne "0" ]; then
   read -p "Интернет не подключен! Enter - Выход..."
-  exit 1;
+  exit 1
+    else
+  urpmi.update -a
 fi;
-
-urpmi.update -a
 
 #Удаление предыдущей установки
 if [ -f /opt/droidcam-uninstall ]; then
@@ -29,11 +25,10 @@ if [ -f /opt/droidcam-uninstall ]; then
   /opt/droidcam-uninstall
 fi;
 
-#Установка (пример для версии droidcam_1.7.1.zip)
-#---
 #Для сборки модуля ядра
 urpmi --auto wget make gcc android-tools
-urpmi --auto $devel $source
+urpmi --auto kernel-source-$(uname -r | sed 's/-desktop//')
+urpmi --auto kernel-desktop-devel-$(uname -r | sed 's/-desktop//')
 
 #Для работы
 urpmi --auto ffmpeg speex usbmuxd libplist
@@ -44,7 +39,6 @@ cd droidcam && ./install-client && ./install-video && ./install-sound
 
 #Удаление kernel-devel и kernel-source
 dnf -y remove kernel-source* kernel-desktop-devel*
-#urpme --auto $devel $source
 
 exit 0;
 
