@@ -40,7 +40,7 @@ Standard sizes (Width x Height): 640×480, 960×720, 1280×720 (720p), 1920×108
 It’s also possible to invert the video size (eg. 480×640, width=480 height=640), which will make the webcam vertical and rotate the video 90º. Not all programs may load the webcam with inverted parameters (eg. Discord does not) but many do (eg. Zoom and OBS).
 
 
-НАСТРОЙКА СМАРТФОНА
+Настройка смартфона
 ---
 URL: https://droidcamru.ru/podkluchenie/cherez-usb/
 
