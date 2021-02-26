@@ -25,7 +25,7 @@ urpmi.update -a
 
 #Удаление предыдущей установки
 if [ -f /opt/droidcam-uninstall ]; then
-  killall adb; killall droidcam;
+  killall adb && killall droidcam;
   /opt/droidcam-uninstall
 fi;
 
@@ -33,7 +33,6 @@ fi;
 #---
 #Для сборки модуля ядра
 urpmi --auto wget make gcc android-tools
-#urpmi --auto kernel-source-latest kernel-devel-latest
 urpmi --auto $devel $source
 
 #Для работы
@@ -44,8 +43,8 @@ unzip -o droidcam_latest.zip -d droidcam
 cd droidcam && ./install-client && ./install-video && ./install-sound
 
 #Удаление kernel-devel и kernel-source
-#dnf -y remove kernel-source* kernel-devel*
-urpme --auto $devel $source
+dnf -y remove kernel-source* kernel-desktop-devel*
+#urpme --auto $devel $source
 
 exit 0;
 
