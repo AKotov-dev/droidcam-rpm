@@ -15,6 +15,8 @@ GitHub: https://github.com/dev47apps/droidcam
 - С GitHub разработчика скачивается версия `droidcam`, указанная в `version`
 - Сборка модуля ядра, установка DroidCam, удаление установленных kernel-devel и kernel-source
 
+`./DroidCam/select-cam-resolution.sh` - дополнительный скрипт для выбора разрешения камеры
+
 Дополнительная информация
 ---
 Запуск: Ярлык в "Меню-Аудио и Видео-DroidCam" или `droidcam` из под юзера
