@@ -5,8 +5,7 @@ URL: https://www.dev47apps.com/droidcam/linux/
 GitHub: https://github.com/dev47apps/droidcam
 
 `su/password`  
-`wget -N https://github.com/AKotov-dev/droidcam-install-update/raw/main/DroidCam.tar.gz`  
-`tar xvzf DroidCam.tar.gz; cd ./DroidCam; ./droidcam-install-update.sh`
+`urpmi --auto wget && wget -N https://github.com/AKotov-dev/droidcam-install-update/raw/main/DroidCam.tar.gz && tar xvzf DroidCam.tar.gz && cd ./DroidCam && ./droidcam-install-update.sh`
 
 - Проверяется наличие подключения к сети Интернет
 - Обновляются текущие зеркала
