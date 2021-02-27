@@ -28,7 +28,7 @@ fi;
 
 #Для сборки модуля ядра
 urpmi --auto wget make gcc android-tools
-urpmi --auto kernel-source-$(uname -r | sed 's/-desktop//')
+#urpmi --auto kernel-source-$(uname -r | sed 's/-desktop//')
 urpmi --auto kernel-desktop-devel-$(uname -r | sed 's/-desktop//')
 
 #Для работы
@@ -39,7 +39,7 @@ unzip -o droidcam_latest.zip -d droidcam
 cd droidcam && ./install-client && ./install-video && ./install-sound
 
 #Удаление kernel-devel и kernel-source
-dnf -y remove kernel-source* kernel-desktop-devel*
+#dnf -y remove kernel-source* kernel-desktop-devel*
 
 exit 0;
 
