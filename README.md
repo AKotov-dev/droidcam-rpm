@@ -15,7 +15,7 @@ GitHub: https://github.com/dev47apps/droidcam
 - С GitHub разработчика скачивается версия `droidcam`, указанная в `version`
 - Сборка модуля ядра, установка DroidCam
 
-`./DroidCam/select-cam-resolution.sh` - дополнительный скрипт для выбора разрешения камеры
+`./DroidCam/select-cam-resolution.sh` - дополнительный скрипт для выбора разрешения камеры  
 `./RPM` - полные архивы каталогов `rpmbuild` DroidCam-1.7.1 для Mageia-7/8 
 
 Дополнительная информация
