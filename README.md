@@ -1,4 +1,4 @@
-DroidCam (x86_64) install/update script & RPM for Mageia Linux 7/8
+DroidCam (x86_64) install/update script & RPM's for Mageia Linux 7/8
 ---
 DroidCam - GNU/Linux client for DroidCam  
 URL: https://www.dev47apps.com/droidcam/linux/  
