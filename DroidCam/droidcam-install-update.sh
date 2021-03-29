@@ -8,7 +8,7 @@
 
 clear
 #Версия DroidCam
-version="1.7.1"
+version="1.7.2"
 
 #Проверка наличия интернет и обновление зеркал
 ping -c 1 -q google.com >&/dev/null
