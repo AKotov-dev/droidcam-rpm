@@ -3,6 +3,7 @@ DroidCam (x86_64) install/update script & RPM's for Mageia Linux 7/8
 DroidCam - GNU/Linux client for DroidCam  
 URL: https://www.dev47apps.com/droidcam/linux/  
 GitHub: https://github.com/dev47apps/droidcam
+ADBManager: https://github.com/AKotov-dev/adbmanager
 
 `su/password` 
 
@@ -16,7 +17,7 @@ GitHub: https://github.com/dev47apps/droidcam
 - Сборка модуля ядра, установка DroidCam
 
 `./DroidCam/select-cam-resolution.sh` - дополнительный скрипт для выбора разрешения камеры  
-`./RPM` - полные архивы каталогов `rpmbuild` DroidCam-1.7.1 для Mageia-7/8 
+`./RPM` - полные архивы каталогов `rpmbuild` DroidCam для Mageia-7/8 
 
 Дополнительная информация
 ---
