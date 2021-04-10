@@ -5,6 +5,8 @@ URL: https://www.dev47apps.com/droidcam/linux/
 GitHub: https://github.com/dev47apps/droidcam  
 ADBManager: https://github.com/AKotov-dev/adbmanager
 
+Установка DroidCam (клиент):
+---
 `su/password` 
 
 `urpmi --auto wget && wget -N https://github.com/AKotov-dev/droidcam-install-update/raw/main/DroidCam.tar.gz && tar xvzf DroidCam.tar.gz && cd ./DroidCam && ./droidcam-install-update.sh`
