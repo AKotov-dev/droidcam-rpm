@@ -5,7 +5,7 @@ URL: https://www.dev47apps.com/droidcam/linux/
 GitHub: https://github.com/dev47apps/droidcam  
 ADBManager: https://github.com/AKotov-dev/adbmanager
 
-Установка DroidCam (клиент)
+Installing DroidCam (client)
 ---
 `su/password` 
 
@@ -21,7 +21,7 @@ ADBManager: https://github.com/AKotov-dev/adbmanager
 `./DroidCam/select-cam-resolution.sh` - дополнительный скрипт для выбора разрешения камеры  
 `./RPM` - полные архивы каталогов `rpmbuild` DroidCam для Mageia-7/8 
 
-Дополнительная информация
+Additional information
 ---
 Запуск: Ярлык в "Меню-Аудио и Видео-DroidCam" или `droidcam` из под юзера
 
