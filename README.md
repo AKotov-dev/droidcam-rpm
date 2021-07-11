@@ -14,8 +14,6 @@ Start droidcam with the microphone (experimental):
 https://github.com/dev47apps/droidcam/issues/54  
 https://github.com/dev47apps/droidcam/issues/60
 
-DroidCamX is already running on the smartphone...
-
 `droidcam && [[ $(pactl list | grep droidcam_audio) ]] || pacmd load-module module-alsa-source device=hw:Loopback,1,0 source_properties=device.description=droidcam_audio` ...and select `droidcam_audio`
 
 Microphone Test:
