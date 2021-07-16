@@ -14,7 +14,7 @@ Start droidcam with the microphone (experimental):
 https://github.com/dev47apps/droidcam/issues/54  
 https://github.com/dev47apps/droidcam/issues/60
 
-`droidcam && [[ $(pactl list | grep droidcam_audio) ]] || pacmd load-module module-alsa-source device=hw:Loopback,1,0 source_properties=device.description=droidcam_audio` ...and select `droidcam_audio`
+Starting from the package version 1.7.3-2, after installing it and restarting the computer, the `droidcam_audio` microphone is selected from the list of devices via `pavucontrol` (the package is under testing)
 
 Microphone Test:
 ---
