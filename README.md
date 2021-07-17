@@ -17,6 +17,7 @@ https://github.com/dev47apps/droidcam/issues/60
 v1.7.3-3  
 1. install the droidcam packages  
 2. su/password; sed -i '/droidcam_audio/d' /etc/pulse/default.pa; reboot  
+3. The mic is working. Need to check the video broadcast over WiFi (it works via USB)  
 
 Microphone Test:
 ---
