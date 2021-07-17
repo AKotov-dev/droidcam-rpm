@@ -14,7 +14,9 @@ Start droidcam with the microphone (experimental):
 https://github.com/dev47apps/droidcam/issues/54  
 https://github.com/dev47apps/droidcam/issues/60
 
-Starting from the package version 1.7.3-2, after installing it and restarting the computer, the `droidcam_audio` microphone is selected from the list of devices via `pavucontrol` (the package is under testing)
+v1.7.3-3  
+1. install the droidcam packages  
+2. su/password; sed -i '/droidcam_audio/d' /etc/pulse/default.pa; reboot  
 
 Microphone Test:
 ---
