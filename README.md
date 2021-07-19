@@ -14,10 +14,14 @@ Start droidcam with the microphone (experimental):
 https://github.com/dev47apps/droidcam/issues/54  
 https://github.com/dev47apps/droidcam/issues/60
 
-v1.7.3-3  
-1. install the droidcam packages  
-2. su/password; sed -i '/droidcam_audio/d' /etc/pulse/default.pa; reboot  
-3. The mic is working. Need to check the video broadcast over WiFi (it works via USB)  
+v1.7.3-4 + backport dkms-v4l2loopback from Mageia-9 and replace dkms-v4l2loopback_dc  
+Before installing, you need to perform a complete removal of previous versions:  
+```
+urpme --auto dkms-v4l2loopback_dc
+sed -i '/droidcam_audio/d' /etc/pulse/default.pa
+reboot
+```
+...then install the new packages and restart the computer.
 
 Microphone and WebCam test:
 ---
