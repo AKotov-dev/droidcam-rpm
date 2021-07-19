@@ -19,6 +19,7 @@ v1.7.3-3
 2. su/password; sed -i '/droidcam_audio/d' /etc/pulse/default.pa; reboot  
 3. The mic is working. Need to check the video broadcast over WiFi (it works via USB)  
 
-Microphone Test:
+Microphone and WebCam test:
 ---
-https://webcammictest.com/ru/check-mic.html
+WebCam: https://webcammictest.com  
+Microphone: https://webcammictest.com/check-mic.html
