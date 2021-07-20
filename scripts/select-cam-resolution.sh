@@ -3,41 +3,37 @@
 #Standard sizes (Width x Height): 640×480, 960×720, 1280×720 (720p), 1920×1080 (1080p).
 
 clear
+
+if [ "$EUID" != "0" ] ; then
+    echo "Required root privileges..."
+    su -c "$0"
+    exit
+fi
+
 echo "\
 1. 640x480
 2. 960x720
 3. 1280x720 (720p)
 4. 1920x1080 (1080p)
 "
-read -p "Select camera resolution: " a
+read -p "Select camera resolution (1-4): " a
 
 case $a in
     1)
-       sed -i 's/width=*[0-9]*/width=640/g' /etc/modprobe.d/droidcam.conf
-       sed -i 's/height=*[0-9]*/height=480/g' /etc/modprobe.d/droidcam.conf
+       sed -i 's/-size=*[0-9]*x*[0-9]*/-size=640x480/g' /usr/bin/droidcam.sh
       ;;
     2)
-       sed -i 's/width=*[0-9]*/width=960/g' /etc/modprobe.d/droidcam.conf
-       sed -i 's/height=*[0-9]*/height=720/g' /etc/modprobe.d/droidcam.conf
+       sed -i 's/-size=*[0-9]*x*[0-9]*/-size=960x720/g' /usr/bin/droidcam.sh
       ;;
     3)
-       sed -i 's/width=*[0-9]*/width=1280/g' /etc/modprobe.d/droidcam.conf
-       sed -i 's/height=*[0-9]*/height=720/g' /etc/modprobe.d/droidcam.conf
-      ;; 
+       sed -i 's/-size=*[0-9]*x*[0-9]*/-size=1280x720/g' /usr/bin/droidcam.sh
+      ;;
     4)
-       sed -i 's/width=*[0-9]*/width=1920/g' /etc/modprobe.d/droidcam.conf
-       sed -i 's/height=*[0-9]*/height=1080/g' /etc/modprobe.d/droidcam.conf
+       sed -i 's/-size=*[0-9]*x*[0-9]*/-size=1920x1080/g' /usr/bin/droidcam.sh
       ;;
     *)
-       sed -i 's/width=*[0-9]*/width=640/g' /etc/modprobe.d/droidcam.conf
-       sed -i 's/height=*[0-9]*/height=480/g' /etc/modprobe.d/droidcam.conf
+       exit 0
       ;;
 esac
 
-echo ""
-cat /etc/modprobe.d/droidcam.conf
-
-[ $(pidof adb) ] && killall adb
-[ $(pidof droidcam) ] && killall droidcam
-rmmod v4l2loopback_dc; modprobe v4l2loopback_dc
-sleep 2
+exit 0;
