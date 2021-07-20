@@ -15,7 +15,7 @@ https://github.com/dev47apps/droidcam/issues/54
 https://github.com/dev47apps/droidcam/issues/60
 
 v1.7.3-5  
-Before installing, you need to perform a complete removal of previous versions:  
+Before installing, you need to perform a complete removal of previous versions:
 ```
 su/password; urpme --auto dkms-v4l2loopback
 
