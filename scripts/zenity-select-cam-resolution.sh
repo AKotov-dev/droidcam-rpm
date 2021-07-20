@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#Скрипт для установки разрешения камеры
+#Select DroidCam trsolution script
 #Requires: zenity & root privileges (su/password)
 
-#Запуск скрипта с привилегиями root
+#Run script with root privileges
 if [ "$EUID" != "0" ] ; then
     echo "$(zenity --password --title="Введите пароль root")" | su -c "$0"
     exit
@@ -14,33 +14,20 @@ a=$(zenity --list --radiolist --title="DroidCam Resolution" --width=350 --height
 
 case $a in
     640)
-       sed -i 's/width=*[0-9]*/width=640/g' /etc/modprobe.d/droidcam.conf
-       sed -i 's/height=*[0-9]*/height=480/g' /etc/modprobe.d/droidcam.conf
+       sed -i 's/-size=*[0-9]*x*[0-9]*/-size=640x480/g' /usr/bin/droidcam.sh
       ;;
     960)
-       sed -i 's/width=*[0-9]*/width=960/g' /etc/modprobe.d/droidcam.conf
-       sed -i 's/height=*[0-9]*/height=720/g' /etc/modprobe.d/droidcam.conf
+       sed -i 's/-size=*[0-9]*x*[0-9]*/-size=960x720/g' /usr/bin/droidcam.sh
       ;;
    1280)
-       sed -i 's/width=*[0-9]*/width=1280/g' /etc/modprobe.d/droidcam.conf
-       sed -i 's/height=*[0-9]*/height=720/g' /etc/modprobe.d/droidcam.conf
-      ;; 
+       sed -i 's/-size=*[0-9]*x*[0-9]*/-size=1280x720/g' /usr/bin/droidcam.sh
+      ;;
    1920)
-       sed -i 's/width=*[0-9]*/width=1920/g' /etc/modprobe.d/droidcam.conf
-       sed -i 's/height=*[0-9]*/height=1080/g' /etc/modprobe.d/droidcam.conf
+       sed -i 's/-size=*[0-9]*x*[0-9]*/-size=1920x1080/g' /usr/bin/droidcam.sh
       ;;
     *)
        exit 0
       ;;
 esac
 
-echo ""
-cat /etc/modprobe.d/droidcam.conf
-
-[ $(pidof adb) ] && killall adb
-[ $(pidof droidcam) ] && killall droidcam
-rmmod v4l2loopback_dc; modprobe v4l2loopback_dc
-
 exit 0;
-
-
