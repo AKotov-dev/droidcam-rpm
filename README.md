@@ -14,14 +14,16 @@ Start droidcam with the microphone (experimental):
 https://github.com/dev47apps/droidcam/issues/54  
 https://github.com/dev47apps/droidcam/issues/60
 
-v1.7.3-4 + backport dkms-v4l2loopback from Mageia-9 and replace dkms-v4l2loopback_dc  
+v1.7.3-5  
 Before installing, you need to perform a complete removal of previous versions:  
 ```
-urpme --auto dkms-v4l2loopback_dc
-sed -i '/droidcam_audio/d' /etc/pulse/default.pa
-reboot
+* Tue Jul 20 2021 AKotov-dev <alex_q_2000> 1.7.3-5.mrx8
+- remove %post %postun scripts
+- add Source4: droidcam.conf Source5: droidcam-mod.conf
+- the user must do: su/password; urpme --auto dkms-v4l2loopback
+  and install new packages
 ```
-...then install the new packages and restart the computer.
+...and restart the computer.
 
 Microphone and WebCam test:
 ---
