@@ -5,7 +5,7 @@
 
 #Run script with root privileges
 if [ "$EUID" != "0" ] ; then
-    echo "$(zenity --password --title="Введите пароль root")" | su -c "$0"
+    echo "$(zenity --password --title="Input root password:")" | su -c "$0"
     exit
 fi
 
