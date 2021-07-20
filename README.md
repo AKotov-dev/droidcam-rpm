@@ -17,6 +17,9 @@ https://github.com/dev47apps/droidcam/issues/60
 v1.7.3-5  
 Before installing, you need to perform a complete removal of previous versions:  
 ```
+su/password; urpme --auto dkms-v4l2loopback
+
+%changelog
 * Tue Jul 20 2021 AKotov-dev <alex_q_2000> 1.7.3-5.mrx8
 - remove %post %postun scripts
 - add Source4: droidcam.conf Source5: droidcam-mod.conf
