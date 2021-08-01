@@ -14,8 +14,8 @@ Start droidcam with the microphone (experimental):
 https://github.com/dev47apps/droidcam/issues/54  
 https://github.com/dev47apps/droidcam/issues/60
 
-v1.7.3-X  
-Before installing, you need to perform a complete removal of previous versions:
+v1.8.X-X  
+For a clean installation, you need to perform a complete removal of previous versions:
 ```
 su/password; urpme --auto dkms-v4l2loopback_dc; urpme --auto dkms-v4l2loopback
 ```
