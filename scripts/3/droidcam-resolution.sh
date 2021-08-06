@@ -3,8 +3,7 @@
 # Select DroidCam resolution script
 # Requires root privileges (pkexec) and zenity
 
-script="$(pwd)"/$(basename "$0")
-if [ "$EUID" != "0" ] ; then pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY "$script"; exit; fi;
+if [ "$EUID" != "0" ] ; then pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY "$0"; exit; fi;
 
 a=$(zenity --list --radiolist --title="Droidcam resolution (v4l2loopback_dc)" --width=350 --height=250 \
 --column="#" --column="Width" --column="Height" 640 640 "480" 960 960 "720" 1280 1280 "720" 1920 1920 "1080")
