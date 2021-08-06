@@ -1,13 +1,10 @@
 #!/bin/bash
 
 # Select DroidCam resolution script
-# Requires: zenity & root privileges (su/password)
+# Requires root privileges (pkexec) and zenity
 
-# Run script with root privileges
-if [ "$EUID" != "0" ] ; then
-    echo "$(zenity --password)" | su -c "$0"
-    exit
-fi
+script="$(pwd)"/$(basename "$0")
+if [ "$EUID" != "0" ] ; then pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY "$script"; exit; fi;
 
 a=$(zenity --list --radiolist --title="Droidcam resolution (v4l2loopback_dc)" --width=350 --height=250 \
 --column="#" --column="Width" --column="Height" 640 640 "480" 960 960 "720" 1280 1280 "720" 1920 1920 "1080")
@@ -33,14 +30,10 @@ esac
 sed -i "s/width=*[0-9]*/width=$w/g" /etc/modprobe.d/droidcam.conf
 sed -i "s/height=*[0-9]*/height=$h/g" /etc/modprobe.d/droidcam.conf
 
-#dev="$(v4l2-ctl --list-devices | sed -n "/Droid/,// p" | head -n +2 | grep 'video' | sed s/'\t'//g)"
-
-#zenity --notification --window-icon="info" --text="Droidcam resolution: "$w"x"$h"";
-
-# Kill droidcam if running (only one instance)
+# Kill droidcam if running & v4l2loopback_dc is busy
 [[ $(pidof droidcam) ]] && killall droidcam
-rmmod -f v4l2loopback_dc && modprobe v4l2loopback_dc;
+rmmod -f v4l2loopback_dc && modprobe v4l2loopback_dc
 
-zenity --info --no-wrap --text="Droidcam resolution: "$w"x"$h"";
+zenity --info --no-wrap --text="Droidcam resolution: "$w"x"$h""
 
 exit 0;
