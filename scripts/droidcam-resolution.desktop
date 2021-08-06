@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=DroidCam-Resolution
+Name[ru]=DroidCam-Resolution
+Comment=Change DroidCam resolution
+Comment[ru]=Изменение разрешения Web-камеры
+Exec=droidcam-resolution.sh
+Icon=/usr/share/icons/droidcam.png
+Terminal=false
+Type=Application
+Categories=Video;AudioVideo;
