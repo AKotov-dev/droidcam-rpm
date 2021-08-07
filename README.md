@@ -17,9 +17,6 @@ https://github.com/dev47apps/droidcam/issues/54
 https://github.com/dev47apps/droidcam/issues/60
 
 **DroidCam-v1.8.X-X**  
-+ Before installing, connect the Mageia updates_testing repository
-+ There is an updated jpeg-turbo v2.0.6. The version of jpeg-turbo 2.0.5 contained a bug: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/2.0.6  
-
 For a clean installation, you need to perform a complete removal of previous versions:
 ```
 su/password; urpme --auto dkms-v4l2loopback_dc; urpme --auto dkms-v4l2loopback
