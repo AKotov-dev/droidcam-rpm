@@ -17,7 +17,9 @@ dkms-v4l2loopback_dc-0.0.X-X.mrx8.noarch.rpm
 droidcam-cli-1.X.X-X.mrx8.x86_64.rpm  
 droidcam-1.X.X-X.mrx8.x86_64.rpm  
 
-To completely remove DroidCam-Client:
+Note: after installing the packages, a reboot is required...  
+
+**To completely remove DroidCam-Client:**
 ```
 su/password
 urpme --auto dkms-v4l2loopback_dc
