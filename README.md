@@ -23,9 +23,8 @@ Note: after installing the packages, a reboot is required...
 ```
 su/password
 urpme --auto dkms-v4l2loopback_dc
+reboot
 ```
-...and restart the computer.
-
 Microphone and WebCam test:
 ---
 WebCam: https://webcammictest.com  
