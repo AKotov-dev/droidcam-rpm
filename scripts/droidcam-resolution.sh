@@ -36,7 +36,7 @@ for ((i=1; i < 10; i++)); do
    else
      break
    fi
-done
+done | zenity --progress --pulsate --auto-close
 
 rmmod -f v4l2loopback_dc; modprobe v4l2loopback_dc
 
