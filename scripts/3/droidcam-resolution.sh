@@ -31,7 +31,7 @@ esac
 sed -i "s/width=*[0-9]*/width=$w/g" /etc/modprobe.d/droidcam.conf
 sed -i "s/height=*[0-9]*/height=$h/g" /etc/modprobe.d/droidcam.conf
 
-# Kill droidcam if running & v4l2loopback_dc/videdev is busy
+# Kill droidcam if running & v4l2loopback_dc/videodev is busy
 for ((i=1; i < 10; i++)); do
    if [[ $(pidof droidcam) ]]; then
      killall droidcam; sleep 1
