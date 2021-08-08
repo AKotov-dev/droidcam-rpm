@@ -43,6 +43,6 @@ done | zenity --progress --pulsate --auto-close
 rmmod -f v4l2loopback_dc && rmmod -f videodev && modprobe videodev && modprobe v4l2loopback_dc
 
 zenity --info --no-wrap --text="Resolution changed: ${w}x${h}\n\n\
-v4l2loopback_dc\/videodev modules has been reloaded..."
+v4l2loopback_dc\/videodev modules has been reloaded"
 
 exit 0;
