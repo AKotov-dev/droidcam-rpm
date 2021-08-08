@@ -41,6 +41,6 @@ done
 rmmod -f v4l2loopback_dc; modprobe v4l2loopback_dc
 
 zenity --info --no-wrap --text="Resolution changed: ${w}x${h}\n\n\
-v4l2loopback_dc module has been reloaded"
+v4l2loopback_dc module has been reloaded..."
 
 exit 0;
