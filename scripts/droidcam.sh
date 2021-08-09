@@ -2,7 +2,7 @@
 
 # DroidCam start with mic "droidcam_audio"
 
-# Kill droidcam if running & snd_aloop is busy
+# Kill droidcam if running
 for ((i=1; i < 10; i++)); do
    if [[ $(pidof droidcam) ]]; then
      killall droidcam; sleep 1

@@ -3,9 +3,9 @@
 # DroidCam Resolution
 # Requires pkexec and zenity
 
-if [ "$EUID" != "0" ]; then pkexec "$0"; exit; fi;
+if [ "$EUID" != "0" ]; then pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY "$0"; exit; fi;
 
-w=$(zenity --list --radiolist --title="DroidCam Resolution v0.1" --width=400 --height=270 \
+w=$(zenity --list --radiolist --title="DroidCam Resolution v0.2" --width=400 --height=270 \
 --column="#" --column="Width" --column="Height" 640 640 "480" 960 960 "720" 1280 1280 "720" 1920 1920 "1080")
 
 case $w in
