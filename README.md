@@ -5,7 +5,7 @@ GitHub: https://github.com/dev47apps/droidcam
 
 Note: The original *.spec's are borrowed from openSUSE Tumbleweed (droidcam-1.7-8.3.src.rpm) and Mageia-8-RC (dkms-vhba-20200106-2.mga8.src.rpm).
 
-![](https://github.com/AKotov-dev/droidcam-rpm/blob/main/scripts/screenshots/screenshot.png)
+![](https://github.com/AKotov-dev/droidcam-rpm/blob/main/scripts/archive/screenshots/screenshot.png)
 
 Testing via ADB
 ---
