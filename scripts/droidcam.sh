@@ -5,11 +5,11 @@
 # Kill droidcam if running
 for ((i=1; i < 10; i++)); do
    if [[ $(pidof droidcam) ]]; then
-     killall droidcam; sleep 1
+     killall droidcam; killall droidcam-cli; sleep 1
    else
      break
    fi
-done | zenity --progress --pulsate --auto-close
+done | zenity --title="DroidCam termination..." --progress --pulsate --auto-close
 
 droidcam &
 
@@ -23,6 +23,6 @@ for ((i=1; i < 10; i++)); do
     pacmd set-default-source 'alsa_input.hw_Loopback_1_0'
     break;
   fi;
-done | zenity --progress --pulsate --auto-close
+done | zenity --title="Waiting for droidcam_audio" --progress --pulsate --auto-close
 
 exit 0;

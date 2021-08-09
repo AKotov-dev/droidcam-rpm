@@ -5,7 +5,7 @@
 
 if [ "$EUID" != "0" ]; then pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY "$0"; exit; fi;
 
-w=$(zenity --list --radiolist --title="DroidCam Resolution v0.2" --width=400 --height=270 \
+w=$(zenity --list --radiolist --title="DroidCam Resolution v0.3" --width=400 --height=270 \
 --column="#" --column="Width" --column="Height" 640 640 "480" 960 960 "720" 1280 1280 "720" 1920 1920 "1080")
 
 case $w in
@@ -32,15 +32,16 @@ sed -i "s/height=*[0-9]*/height=$h/g" /etc/modprobe.d/droidcam.conf
 # Kill droidcam if running & v4l2loopback_dc is busy
 for ((i=1; i < 10; i++)); do
    if [[ $(pidof droidcam) ]]; then
-     killall droidcam; sleep 1
+     killall droidcam; killall droidcam-cli; sleep 1
    else
      break
    fi
-done | zenity --progress --pulsate --auto-close
+done | zenity --title="DroidCam termination..." --progress --pulsate --auto-close
 
-rmmod -f v4l2loopback_dc; modprobe v4l2loopback_dc
+# Reload v4l2loopback_dc
+adb kill-server && adb start-server; rmmod -f v4l2loopback_dc; modprobe v4l2loopback_dc
 
 zenity --info --no-wrap --text="Resolution changed: ${w}x${h}\n\n\
-v4l2loopback_dc module has been reloaded..."
+Module v4l2loopback_dc has been reloaded..."
 
 exit 0;
