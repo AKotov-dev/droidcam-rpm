@@ -1,9 +1,15 @@
 #!/usr/bin/bash
 
-# DroidCam start with droidcam_audio script
+# DroidCam start with mic "droidcam_audio"
 
-# Kill droidcam if running (only one instance)
-[[ $(pidof droidcam) ]] && killall droidcam
+# Kill droidcam if running & snd_aloop is busy
+for ((i=1; i < 10; i++)); do
+   if [[ $(pidof droidcam) ]]; then
+     killall droidcam; sleep 1
+   else
+     break
+   fi
+done | zenity --progress --pulsate --auto-close
 
 droidcam &
 
@@ -17,6 +23,6 @@ for ((i=1; i < 10; i++)); do
     pacmd set-default-source 'alsa_input.hw_Loopback_1_0'
     break;
   fi;
-done;
+done | zenity --progress --pulsate --auto-close
 
 exit 0;
