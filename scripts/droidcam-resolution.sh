@@ -6,7 +6,11 @@
 if [ "$EUID" != "0" ]; then pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY "$0"; exit; fi;
 
 w=$(zenity --list --radiolist --title="DroidCam Resolution v0.3" --width=400 --height=270 \
---column="#" --column="Width" --column="Height" 640 640 "480" 960 960 "720" 1280 1280 "720" 1920 1920 "1080")
+--column="#" --column="Width" --column="Height" \
+$([[ $(grep 640 /etc/modprobe.d/droidcam.conf) ]] && echo 'TRUE' || echo 'FALSE')  640 480 \
+$([[ $(grep 960 /etc/modprobe.d/droidcam.conf) ]] && echo 'TRUE' || echo 'FALSE')  960 720 \
+$([[ $(grep 1280 /etc/modprobe.d/droidcam.conf) ]] && echo 'TRUE' || echo 'FALSE') 1280 720 \
+$([[ $(grep 1920 /etc/modprobe.d/droidcam.conf) ]] && echo 'TRUE' || echo 'FALSE') 1920 1080);
 
 case $w in
     640)
@@ -36,7 +40,7 @@ for ((i=1; i < 10; i++)); do
    else
      break
    fi
-done | zenity --title="DroidCam termination..." --progress --pulsate --auto-close
+done | zenity --title="droidcam termination..." --progress --pulsate --auto-close
 
 # Reload v4l2loopback_dc
 adb kill-server && adb start-server; rmmod -f v4l2loopback_dc; modprobe v4l2loopback_dc

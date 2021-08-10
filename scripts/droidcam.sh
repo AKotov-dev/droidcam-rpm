@@ -9,7 +9,7 @@ for ((i=1; i < 10; i++)); do
    else
      break
    fi
-done | zenity --title="DroidCam termination..." --progress --pulsate --auto-close
+done | zenity --title="droidcam termination..." --progress --pulsate --auto-close
 
 droidcam &
 
@@ -23,6 +23,6 @@ for ((i=1; i < 10; i++)); do
     pacmd set-default-source 'alsa_input.hw_Loopback_1_0'
     break;
   fi;
-done | zenity --title="Waiting for droidcam_audio" --progress --pulsate --auto-close
+done | zenity --title="waiting for droidcam_audio" --progress --pulsate --auto-close
 
 exit 0;
