@@ -5,7 +5,7 @@
 
 if [ "$EUID" != "0" ]; then pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY "$0"; exit; fi;
 
-w=$(zenity --list --radiolist --title="DroidCam Resolution v0.3" --width=400 --height=270 \
+w=$(zenity --list --radiolist --title="DroidCam Resolution v0.4" --width=400 --height=270 \
 --column="#" --column="Width" --column="Height" \
 $([[ $(grep 640 /etc/modprobe.d/droidcam.conf) ]] && echo 'TRUE' || echo 'FALSE')  640 480 \
 $([[ $(grep 960 /etc/modprobe.d/droidcam.conf) ]] && echo 'TRUE' || echo 'FALSE')  960 720 \
