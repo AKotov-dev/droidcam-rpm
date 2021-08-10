@@ -21,7 +21,7 @@ case $w in
    1920)
        h=1080
       ;;
-    *)
+      *)
        exit 0
       ;;
 esac
@@ -42,6 +42,8 @@ done | zenity --title="DroidCam termination..." --progress --pulsate --auto-clos
 adb kill-server && adb start-server; rmmod -f v4l2loopback_dc; modprobe v4l2loopback_dc
 
 zenity --info --no-wrap --text="Resolution changed: ${w}x${h}\n\n\
-Module v4l2loopback_dc has been reloaded..."
+Module v4l2loopback_dc has been reloaded\n\n\
+Don't forget to change the camera resolution\n\
+in your smartphone..."
 
 exit 0;
