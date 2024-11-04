@@ -22,7 +22,7 @@ Note: Port 4747 must be open in your iptables. The port can be changed to anothe
 
 DroidCam-Client rpm-packages
 ---
-dkms-v4l2loopback_dc-0.0.X-X.mrx8.noarch.rpm (installed first)  
+dkms-v4l2loopback_dc-0.0.X-X.mrxX.noarch.rpm (installed first)  
 droidcam-cli-X.X.X-X.mrxX.x86_64.rpm  
 droidcam-X.X.X-X.mrxX.x86_64.rpm  
 
